@@ -118,7 +118,7 @@ class LivewireCalendar extends Component
     /**
      * @var bool
      */
-    public bool $showStartTimeEnabled;
+    public bool $showStartTimeEnabled = false;
 
     /**
      * @var int
@@ -179,7 +179,6 @@ class LivewireCalendar extends Component
                           $dragAndDropEnabled = true,
                           $dayClickEnabled = true,
                           $eventClickEnabled = true,
-                          $showStartTimeEnabled = false,
                           $initialCalendarMode = 0,
                           $weekView = null,
                           $initialLocale = 'en',
@@ -220,8 +219,6 @@ class LivewireCalendar extends Component
         $this->dayClickEnabled = $dayClickEnabled;
         $this->eventClickEnabled = $eventClickEnabled;
 
-        $this->showStartTimeEnabled = $showStartTimeEnabled;
-
         $this->calendarMode = $initialCalendarMode;
 
         $this->locale = $initialLocale;
@@ -246,6 +243,16 @@ class LivewireCalendar extends Component
     {
         //
     }
+
+    /**
+     * @param bool $mode
+     * @return void
+     */
+    public function setStartTimeEnabled(bool $mode)
+    {
+        $this->showStartTimeEnabled = $mode;
+    }
+
 
     /**
      * @param int $mode
